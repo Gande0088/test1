@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Page</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .navcontainer {
+      height: 80px;
+      width: 100%;
+      background-color: black;
+      display: flex;
+    }
+
+    #leftside {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #rightside {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+      margin-right: 50px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .Container1 {
+      width: 1200px;
+      height: 100px;
+
+      display: flex;
+      justify-content: space-evenly;
+
+      margin: 30px auto;
+    }
+    #categories {
+      width: 1100px;
+      margin: 20px auto;
+
+      padding: 20px;
+    }
+
+    .Container2 {
+      width: 1100px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    p {
+      margin: 0px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    #categories1 {
+      width: 1100px;
+      margin: 20px auto;
+
+      padding: 20px;
+    }
+
+    .container3 {
+      width: 1100px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    button {
+      padding: 10px 25px;
+      background: none;
+      color: red;
+      font-weight: bold;
+      border: 3px solid red;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: red;
+      color: whitesmoke;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: green;
+    }
+
+    .Container4 {
+      width: 900px;
+      height: 400px;
+      margin: 50px auto;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 5px;
+    }
+
+    .Container4 div {
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #Item1 {
+      grid-column: 1/4;
+      grid-row: 1/3;
+      background-image: url("https://www.esquire.com.au/wp-content/uploads/2024/06/colourful-mens-clothes-sharp.jpg");
+      background-position: center;
+      background-size: 100% 100%;
+    }
+
+    #Item2 {
+      grid-column: 4/6;
+      grid-row: 1/2;
+      background-image: url("https://cdn.shopify.com/s/files/1/0270/3812/2051/files/5b_480x480.jpg?v=1586505636");
+      background-size: 100% 100%;
+      background-position: center;
+    }
+
+    #Item3 {
+      grid-column: 4/6;
+      grid-row: 2/3;
+      background-image: url("https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2024-10/Top%207%20Winter%20Wear%20Brands%20in%20India%20Under%203500%20for%20Men%20and%20Women.jpg");
+      background-position: center;
+      background-size: 100% 100%;
+    }
+    #Item1::before,
+    #Item2::before,
+    #Item3::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+      z-index: 1;
+      border-radius: 5px;
+    }
+    #Item1 h3,
+    #Item1 p,
+    #Item2 h3,
+    #Item2 p,
+    #Item3 h3,
+    #Item p {
+      position: relative;
+      z-index: 2;
+    }
+
+    #Item1,
+    #Item2,
+    #Item3 {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .Container5 {
+      width: 800px;
+      height: 300px;
+      margin: 80px auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      gap: 5px;
+    }
+
+    #one {
+      grid-column: 1/2;
+      grid-row: 1/3;
+
+      background-image: url("https://images.squarespace-cdn.com/content/v1/5b670534b98a78d5e84a7d19/2dc2f21e-22f1-4f28-bca4-85d1502e725e/free-photo-of-a-camera-on-a-yellow-surface.jpeg");
+      background-position: center;
+      background-size: 100% 100%;
+    }
+
+    #two {
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+
+    .Container5 div {
+      border-radius: 5px;
+    }
+
+    .Container5 button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 20px;
+    }
+
+    .Container6 {
+      height: 300px;
+      width: 1000px;
+      margin: 50px auto;
+      gap: 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    #Text {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    #Image {
+      grid-column: 2/3;
+      grid-row: 1/3;
+      background-image: url("https://blogscdn.thehut.net/wp-content/uploads/sites/32/2018/06/19173601/1200x672_240517197_MC_MK_Blog_Imagery_June_Image10_1200x672_acf_cropped.jpg");
+      background-size: 100% 100%;
+      background-position: center;
+    }
+
+    .Container6 div {
+      border-radius: 5px;
+    }
+
+    .Container6 button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 20px;
+    }
+
+    .Container7 {
+      width: 1100px;
+
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #categories2 {
+      width: 1100px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .footer {
+      width: 100%;
+      height: 300px;
+
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-rows: 2fr 1fr;
+      gap: 5px;
+      background-color: black;
+    }
+
+    #part1 {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    #part2 {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    #part3 {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+
+    #part4 {
+      grid-column: 4/5;
+      grid-row: 1/2;
+    }
+
+    #part5 {
+      grid-column: 1/5;
+      grid-row: 2/3;
+    }
+
+    .footer div {
+      color: white;
+    }
+
+    .footer #part5 {
+      background-color: grey;
+      display: flex;
+    }
+
+    .footer #part5left {
+      width: 50%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .footer #part5right {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .footer #part2 p {
+      font-weight: lighter;
+      text-align: center;
+      margin: 20px;
+      font-size: 14px;
+    }
+
+    .footer #part3 p {
+      font-weight: lighter;
+      text-align: center;
+      margin: 20px;
+      font-size: 14px;
+    }
+
+    .footer #part4 p {
+      font-weight: lighter;
+      text-align: center;
+      margin: 20px;
+      font-size: 14px;
+    }
+
+    .Container1 img {
+      border-radius: 50%;
+    }
+
+    .Container1 p {
+      font-weight: lighter;
+    }
+  </style>
+
+  <body>
+    <header>
+      <div class="navcontainer">
+        <div id="leftside">
+          <h2 style="color: whitesmoke">Ecommerce Platform</h2>
+        </div>
+        <div id="rightside">
+          <a href="">Home</a>
+          <a href="">Profile</a>
+          <a href="">Products</a>
+          <a href="">Contact us</a>
+          <button style="font-size: 15px; margin: 20px">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="Container1">
+      <div style="text-align: center">
+        <img
+          src="https://img.freepik.com/premium-photo/futuristic-gadgets-showcase-lineup-sleek-modern-technological-devices_977107-682.jpg"
+          alt="Product Image"
+          width="70"
+          height="70"
+        />
+        <p>Electronics</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-bpPyLpGOagJsW53VhLV49p582zi1Iy61Cg&s"
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Clothing</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://www.iconicindia.com/cdn/shop/articles/Fashion_Latest_Trends.png?v=1693421003"
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Mens Fashion</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGg04c_aZEh7VOL8fLkk7RcUNhPNDJrDH2DA&s"
+          alt="Product Image"
+          width="70"
+          height="70"
+        />
+        <p>Fitness equipment</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKGZkIGpWDTVcc3dpHWqlbLGPN-HUm51ozVQ&s"
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Trending Products</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://media.istockphoto.com/id/534362613/photo/gardening.jpg?s=612x612&w=0&k=20&c=5uM6WYUqgX67aWIdqwUSl5D2eNxHMrAXC9HwvSEVi0o="
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Gardening Tools</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://stahlkitchens.com/cdn/shop/articles/Products_A2_2000x.gif?v=1718389058"
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Kitchen Essentials</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://5.imimg.com/data5/SELLER/Default/2023/4/302816080/JR/SQ/TN/101759040/8-85046-mobile-phone-accessories-png-png-download-mobile-accessories.png"
+          alt="Prodcut image"
+          width="70"
+          height="70"
+        />
+        <p>Mobile Accessories</p>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          src="https://m.media-amazon.com/images/I/61uUnuPsCCL._AC_UF894,1000_QL80_.jpg"
+          alt="Product Image"
+          width="70"
+          height="70"
+        />
+        <p>Furniture & Dining</p>
+      </div>
+    </div>
+
+    <div id="categories">
+      <h2>Beauty, Food, Toy & Many More</h2>
+      <div class="Container2">
+        <div style="text-align: center">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1684407616442-8d5a1b7c978e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Product Image"
+            &ved="2ahUKEwiA9vrq_fCNAxUK9zgGHSKJKYoQM3oECBkQAA"
+            width="200px"
+            height="200px"
+          />
+          <p>Beauty Products</p>
+          <span> 50% off </span>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://img.freepik.com/free-photo/modern-stationary-collection-arrangement_23-2149309643.jpg?semt=ais_hybrid&w=740"
+            alt="Product Image"
+            &ved="2ahUKEwiA9vrq_fCNAxUK9zgGHSKJKYoQM3oECBkQAA"
+            width="200px"
+            height="200px"
+          />
+          <p>Electronics</p>
+          <span> Free Delivery </span>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1684795780266-ecd819f04f96?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Product Image"
+            &ved="2ahUKEwiA9vrq_fCNAxUK9zgGHSKJKYoQM3oECBkQAA"
+            width="200px"
+            height="200px"
+          />
+          <p>Toys</p>
+          <span> Offers upto 60% </span>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://images.unsplash.com/photo-1589983006655-4ef9a756ebe3?q=80&w=1995&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Product Image"
+            &ved="2ahUKEwiA9vrq_fCNAxUK9zgGHSKJKYoQM3oECBkQAA"
+            width="200px"
+            height="200px"
+          />
+          <p>Kitchen Appliances</p>
+          <span> 50% off </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="Container4">
+      <div id="Item1">
+        <h3 style="color: whitesmoke; font-weight: bold">Shop for Fashion</h3>
+        <p style="color: whitesmoke; font-size: 14px; text-align: center">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
+          quibusdam quaerat aperiam? Quam consequatur repellendus consectetur
+          voluptate nihil sint reiciendis.
+        </p>
+      </div>
+      <div id="Item2">
+        <h3 style="color: whitesmoke; font-weight: bold">Kids Fashion</h3>
+        <p style="color: whitesmoke; font-size: 14px; text-align: center">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
+          ex!
+        </p>
+      </div>
+      <div id="Item3">
+        <h3 style="color: whitesmoke; font-weight: bold">
+          Shop for winter wear
+        </h3>
+        <p style="color: whitesmoke; font-size: 14px; text-align: center">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,
+          delectus!
+        </p>
+      </div>
+    </div>
+
+    <div id="categories1">
+      <h2>Shop Footwears by Brands</h2>
+      <div class="container3">
+        <div style="text-align: center">
+          <img
+            src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Brand"
+            width="220px"
+            height="220px"
+          />
+          <p>Nike</p>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
+            alt="Brand"
+            width="220px"
+            height="220px"
+          />
+          <p>Vans</p>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHNob2VzfGVufDB8fDB8fHww"
+            alt="Brand"
+            width="220px"
+            height="220px"
+          />
+          <p>Puma</p>
+        </div>
+
+        <div style="text-align: center">
+          <img
+            src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHNob2VzfGVufDB8fDB8fHww"
+            alt="Brand"
+            width="220px"
+            height="220px"
+          />
+          <p>Asos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Container5">
+      <div id="one"></div>
+      <div
+        id="two"
+        style="
+          font-weight: bold;
+          font-size: 30px;
+          padding: 20px 50px;
+          text-align: center;
+        "
+      >
+        Sony Camera
+        <p style="font-weight: lighter; padding: 30px 10px; text-align: center">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+          maxime iure dignissimos quas nostrum maiores vitae dolore porro,
+          molestiae dolor aliquam neque? Ullam, nostrum deserunt culpa eveniet
+          quod aliquam exercitationem!
+        </p>
+        <button style="margin: 20px 20px; padding: 10px 20px">
+          Product Details
+        </button>
+      </div>
+    </div>
+
+    <div id="categories2">
+      <h2>Menswear shop by brand</h2>
+      <div class="Container7">
+        <div>
+          <img
+            src="https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/inline-images/Untitled%20design-13.jpg"
+            alt="Product Image"
+            width="220px"
+            height="220px"
+          />
+          <p style="text-align: center; margin: 10px">Louis Philippe</p>
+        </div>
+        <div>
+          <img
+            src="https://cantabilshop.com/cdn/shop/files/men_collection_mobile.jpg?v=1728306864"
+            alt="Product Image"
+            width="220px"
+            height="220px"
+          />
+          <p style="text-align: center; margin: 10px">Indian Terrain</p>
+        </div>
+        <div>
+          <img
+            src="https://www.werd.com/wp-content/uploads/2022/08/buck-mason.jpg"
+            alt="Product Image"
+            width="220px"
+            height="220px"
+          />
+          <p style="text-align: center; margin: 10px">H&M</p>
+        </div>
+        <div>
+          <img
+            src="https://robbreport.com/wp-content/uploads/2024/02/India_MensFeat7.jpg?w=1024"
+            alt="Product Image"
+            width="220px"
+            height="220px"
+          />
+          <p style="text-align: center; margin: 10px">Denim</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="Container6">
+      <div id="Text">
+        <h3
+          style="
+            margin: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+          "
+        >
+          Mens Grooming Kit for sale
+        </h3>
+        <p style="font-weight: lighter; padding: 20px 20px; text-align: center">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ipsum
+          labore sed omnis, iure vitae. Veniam soluta facilis quibusdam ad ut
+          eius quia vero quod perferendis distinctio vitae, inventore in at ea
+          debitis quam impedit reprehenderit ipsum corrupti neque expedita.
+        </p>
+
+        <p style="font-weight: lighter; padding: 20px 20px; text-align: center">
+          To find out the product details click on the link below
+        </p>
+        <button style="margin: 20px 160px; padding: 10px 20px">
+          Product Details
+        </button>
+      </div>
+      <div id="Image"></div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <div id="part1">
+          <h4
+            style="
+              font-weight: lighter;
+              text-align: center;
+              margin: 20px;
+              font-size: 22px;
+            "
+          >
+            Responsive Footer
+          </h4>
+          <p
+            style="
+              font-weight: lighter;
+              text-align: center;
+              margin: 20px;
+              font-size: 14px;
+            "
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere qui
+            a esse in, officia iusto laborum laboriosam nisi exercitationem
+            minima.
+          </p>
+        </div>
+        <div
+          id="part2"
+          style="font-weight: lighter; text-align: center; margin: 20px"
+        >
+          <h4 style="font-weight: lighter; text-align: center; font-size: 22px">
+            Some Links
+          </h4>
+          <p>FAQ</p>
+          <p>Cookies policy</p>
+          <p>Terms and conditions</p>
+          <p>Support</p>
+        </div>
+        <div
+          id="part3"
+          style="font-weight: lighter; text-align: center; margin: 20px"
+        >
+          <h4 style="font-weight: lighter; text-align: center; font-size: 22px">
+            Contact us
+          </h4>
+          <p>Email</p>
+          <p>Mobile</p>
+          <p>Corporate Address</p>
+        </div>
+        <div
+          id="part4"
+          style="font-weight: lighter; text-align: center; margin: 20px"
+        >
+          <h4 style="font-weight: lighter; text-align: center; font-size: 22px">
+            News Letter
+          </h4>
+          <p>News Letters</p>
+          <p>Magazines</p>
+        </div>
+        <div id="part5">
+          <div id="part5left">
+            <div id="Home">Home</div>
+            <div id="About">About</div>
+            <div id="Contact">Contact</div>
+            <div id="Blog">Blog</div>
+            <div id="Social">Social</div>
+          </div>
+          <div id="part5right">
+            <p>Copyright @2020 Responsive footer</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
