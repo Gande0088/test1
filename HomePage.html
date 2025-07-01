@@ -49,7 +49,7 @@
     #categories {
       width: 1100px;
       margin: 20px auto;
-
+      text-align: center;
       padding: 20px;
     }
 
@@ -344,9 +344,10 @@
 
     /* using media screen tag fro responsive design */
 
-    @media screen and (max-width: 900px) {
+    @media screen and (min-width: 700px) and (max-width: 900px) {
       .navcontainer {
         flex-direction: row;
+
         height: auto;
         align-items: center;
         text-align: center;
@@ -363,9 +364,19 @@
         margin: 10px 0;
       }
 
-      .Container1,
-      .Container2,
-      .container3,
+      .Container1 {
+        display: none;
+      }
+
+      .Container2 div {
+        margin: 10px;
+      }
+      .Container2 {
+        flex-direction: column;
+      }
+      .container3 {
+        flex-direction: column;
+      }
       .Container4,
       .Container5,
       .Container6,
@@ -383,11 +394,18 @@
       }
 
       .Container4 {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
       }
 
+      #categories1 h2 {
+        text-align: center;
+      }
+
+      #categories2 {
+        display: none;
+      }
       #Item1,
       #Item2,
       #Item3 {
@@ -397,18 +415,35 @@
       }
 
       .Container5 {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         height: auto;
+        margin: 20px auto;
+        gap: 20px;
+      }
+
+      .Container5 #one {
+        width: 90%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .Container5 #two {
+        width: 90%;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .Container5 button {
+        width: 80%;
+        margin-top: 20px;
       }
 
       .Container6 {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        width: 90%;
-        height: auto;
-      }
+        display: none;
 
       #Image {
         height: 300px;
