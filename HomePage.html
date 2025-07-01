@@ -341,6 +341,117 @@
     .Container1 p {
       font-weight: lighter;
     }
+
+    /* using media screen tag fro responsive design */
+
+    @media screen and (max-width: 900px) {
+      .navcontainer {
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        text-align: center;
+      }
+
+      #leftside,
+      #rightside {
+        width: 100%;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+
+      #rightside a {
+        margin: 10px 0;
+      }
+
+      .Container1,
+      .Container2,
+      .container3,
+      .Container4,
+      .Container5,
+      .Container6,
+      .Container7 {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: 20px auto;
+      }
+
+      .Container1 div,
+      .container3 div,
+      .Container7 div {
+        margin: 10px;
+      }
+
+      .Container4 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        width: 90%;
+      }
+
+      #Item1,
+      #Item2,
+      #Item3 {
+        grid-column: auto;
+        grid-row: auto;
+        height: 300px;
+      }
+
+      .Container5 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: 90%;
+        height: auto;
+      }
+
+      .Container6 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: 90%;
+        height: auto;
+      }
+
+      #Image {
+        height: 300px;
+      }
+
+      .footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        padding: 20px;
+      }
+
+      #part1,
+      #part2,
+      #part3,
+      #part4,
+      #part5 {
+        grid-column: auto;
+        grid-row: auto;
+        margin: 10px 0;
+      }
+
+      #part5 {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      #part5left,
+      #part5right {
+        width: 100%;
+        justify-content: center;
+      }
+
+      button {
+        width: 80%;
+        margin: 10px auto;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   </style>
 
   <body>
